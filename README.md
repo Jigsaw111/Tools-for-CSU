@@ -8,6 +8,7 @@
 * 每日健康定时签到
 * 文件批量重命名工具
 * 近代史在线听课代刷程序
+* 课表自动查询工具
 
 ## 移动网络断网重连
 
@@ -66,3 +67,18 @@ json文件样例：
 
 **运行环境 python3以及相关插件**
 
+## 课表自动查询工具
+
+~~建议懒得折腾的人直接去用[每课](https://everyclass.xyz)，那玩意儿比这好使多了。~~
+
+用了[fr0der1c](https://github.com/fr0der1c)/[EveryClass-collector](https://github.com/fr0der1c/EveryClass-collector)里的课表数据处理算法，和[yylou15](https://github.com/yylou15)/[csu-tools](https://github.com/yylou15/csu-tools)里找到的教务系统的坑爹加密方法。
+
+**请勿用于违法犯罪途径！**
+
+*因为目前每课上很多人给自己开了课表不可见，导致我想查一查谁请假是在蒙我都没办法，所以我就写了这个东西。*
+
+虽然我校的课表系统是半开放的，所以你查找一个人仍然需要**学号**和**姓名**。
+
+无法大物实验和电工电子实验，也不打算加入这些功能（查询实验这种改选频繁的课程没有意义）。
+
+目前仅能输出json格式的文件，后续开发计划请看[README](/src/class-spider-lite)

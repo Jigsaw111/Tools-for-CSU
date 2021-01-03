@@ -13,7 +13,7 @@ soup = bs4.BeautifulSoup(session.post("http://ca.its.csu.edu.cn/Home/Login/215",
     "passWord": '信息门户密码（默认为身份证后六位）',
     "enter": True
 }).text, "lxml")
-
+print(soup.findAll("input")[0])
 session.post("https://wxxy.csu.edu.cn/a_csu/api/sso/validate", data={
     "tokenId": soup.findAll("input")[0].attrs["value"],
     "account": soup.findAll("input")[1].attrs["value"],
