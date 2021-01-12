@@ -39,6 +39,8 @@ for week_day in range(1, 8):
             if(not str(week_day) in class_info):class_info[str(week_day)]={}
             class_info[str(week_day)][str(class_time)] = {
                             'clsname': i.contents[0],
+                            'weekday': week_day,
+                            'classtime': str(class_time*2-1)+'-'+str(class_time*2),
                             'teacher': 'None' if not i.select('font[title="老师"]') else \
                                 i.select('font[title="老师"]')[0].string,
                             'duration': 'None' if not i.select('font[title="周次"]') else \
