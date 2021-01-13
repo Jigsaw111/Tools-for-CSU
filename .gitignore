@@ -4,4 +4,4 @@ config.py
 __pycache__
 test/
 student_info.py
-student_info.json
+merge.py
