@@ -52,11 +52,13 @@ def get_data():
                                     i.select('font[title="上课地点教室"]')[0].string}
 
     return class_info
-  
+
+#返回json文件
 def get_json(class_info):                         
     with open("class_info.json",'w') as f:
         f.write(json.dumps(class_info,indent=4, ensure_ascii=False,separators=(',', ': ')))
 
+#返回ascii表格
 def get_table(class_info):
     t=PrettyTable()
     for week_day in range(1,8):
@@ -72,6 +74,7 @@ def get_table(class_info):
         t.add_column(str(week_day),class_list)
     return t.get_string(header=False,hrules=ALL)
 
+# ascii表格转图片，算法来自：https://blog.csdn.net/mx472756841/article/details/53363568
 def get_photo(class_info_table):
     space = 5
     font = ImageFont.truetype('simhei.ttf',16, encoding='utf-8')
@@ -93,7 +96,9 @@ if __name__=='__main__':
     try:
         if sys.argv[1]=='json':
             get_json(get_data())
+        elif sys.argv[1]=='photo':
+            get_photo(get_table(get_data()))
         else:
             print(get_table(get_data()))
     except:
-        get_photo(get_table(get_data()))
+        print(get_table(get_data()))
