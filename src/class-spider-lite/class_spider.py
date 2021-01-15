@@ -33,7 +33,7 @@ def get_data():
     data = {'type': 'xs0101', 'xnxq01id': config.semester,'xs0101id': config.id,'xs': config.name}
     url = 'http://csujwc.its.csu.edu.cn/jiaowu/pkgl/llsykb/llsykb_kb.jsp'
     req = requests.post(url, cookies=myCookie,data=data)
-    class_info={}
+    class_info={'name':config.name,'semester':config.semester}
     soup = BeautifulSoup(req.text, 'html.parser')
     for week_day in range(1, 8):
         for class_time in range(1, 7):
@@ -72,6 +72,7 @@ def get_table(class_info):
             except:
                 class_list.append('')
         t.add_column(str(week_day),class_list)
+    t.title=class_info['name']+'的'+class_info['semester']+'课表'
     return t.get_string(header=False,hrules=ALL)
 
 # ascii表格转图片，算法来自：https://blog.csdn.net/mx472756841/article/details/53363568
