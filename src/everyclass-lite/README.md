@@ -2,7 +2,7 @@
 
 ~~建议懒得折腾的人直接去用[每课](https://everyclass.xyz)，那玩意儿比这好使多了。~~
 
-用了[fr0der1c](https://github.com/fr0der1c)/[EveryClass-collector](https://github.com/fr0der1c/EveryClass-collector)里的课表数据处理算法，和[yylou15](https://github.com/yylou15)/[csu-tools](https://github.com/yylou15/csu-tools)里得到的教务系统的加密方法。
+用了 [fr0der1c/EveryClass-collector](https://github.com/fr0der1c/EveryClass-collector) 里的课表数据处理算法，和 [yylou15/csu-tools](https://github.com/yylou15/csu-tools) 里得到的教务系统登陆界面的加密方法。
 
 *因为目前每课上很多人给自己开了课表不可见，导致我想查一查谁请假是在蒙我都没办法，所以我就写了这个东西。*
 
@@ -14,7 +14,7 @@
 
 ### TO DO List
 
-- [ ]  实现自动生成`.ics`/`.csv`文件的功能。
-- [x]  实现导出成图像的功能（for NoDice）。
-- [x]  实现导出字符画的功能。
-
+- [ ] 导出 `.ics`/`.csv`
+- [x] 导出图像
+- [x] 导出字符画
+- [x] 导出 `.json  `

@@ -1,4 +1,3 @@
-.idea
 *.json
 config.py
 __pycache__
